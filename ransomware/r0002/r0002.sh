@@ -1,5 +1,27 @@
 #! /bin/zsh
 
+# -----------------------------------------------------------------------------
+# Script de compresión y cifrado de directorios con OpenSSL
+#
+# Descripción:
+#   Este script en Zsh comprime un directorio en un archivo TAR y lo cifra 
+#   utilizando el algoritmo AES-256-CBC con PBKDF2 para mejorar la seguridad.
+#   Tras el cifrado, elimina el directorio original y el archivo temporal TAR.
+#
+# Uso:
+#   - Asegúrese de que el directorio especificado en la variable "DIRECTORIO" exista.
+#   - Ejecute el script en un entorno compatible con Zsh.
+#
+# Parámetros:
+#   - DIRECTORIO: Nombre del directorio a comprimir y cifrar.
+#   - ARCHIVO_CIFRADO: Nombre del archivo resultante después del cifrado.
+#   - CLAVE: Clave utilizada para la encriptación (definida en el script).
+#
+# Advertencia:
+#   - Este proceso elimina el directorio original tras el cifrado. 
+#   - Asegúrese de recordar la clave, ya que sin ella no podrá descifrar el archivo.
+# -----------------------------------------------------------------------------
+
 DIRECTORIO="carpeta"
 ARCHIVO_CIFRADO="carpeta.tar.enc"
 CLAVE="ClaveSuperSecreta"
@@ -24,6 +46,3 @@ if [[ -d "$DIRECTORIO" ]]; then
 else
     echo "[!] Error: No se encontró el directorio '$DIRECTORIO'"
 fi
-
-
-

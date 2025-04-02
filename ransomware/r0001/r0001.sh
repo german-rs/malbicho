@@ -1,5 +1,27 @@
 #! /bin/zsh
 
+# -----------------------------------------------------------------------------
+# Script de encriptación con OpenSSL
+# 
+# Descripción:
+#   Este script en Zsh encripta un archivo de texto utilizando el algoritmo 
+#   AES-256-CBC a través de OpenSSL. Implementa medidas de seguridad como salting
+#   y PBKDF2 con 100,000 iteraciones para fortalecer la clave derivada.
+#
+# Uso:
+#   - Asegurarse de que el archivo "documento.txt" esté en el mismo directorio.
+#   - Ejecutar el script en un entorno compatible con Zsh.
+#
+# Parámetros:
+#   - archivo: Nombre del archivo de entrada a encriptar.
+#   - archivo_encriptado: Nombre del archivo de salida con el contenido cifrado.
+#   - clave_secreta: Clave utilizada para la encriptación (definida en el script).
+#
+# Advertencia:
+#   - El uso inadecuado de la clave de encriptación puede llevar a la pérdida 
+#     irreversible del acceso a los datos.
+# -----------------------------------------------------------------------------
+
 # Archivo de entrada.
 archivo="documento.txt"
 
@@ -25,5 +47,5 @@ if [[ -f "$archivo" ]]; then
     openssl enc -aes-256-cbc -salt -pbkdf2 -iter 100000 -in "$archivo" -out "$archivo_encriptado" -pass pass:"$clave_secreta"
     echo "Archivo encriptado guardado como $archivo_encriptado"
 else
-    "El archivo $archivo no existe. Asegurate de que esté en el mismo directorio"
+    echo "El archivo $archivo no existe. Asegúrate de que esté en el mismo directorio."
 fi

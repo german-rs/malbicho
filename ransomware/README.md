@@ -8,25 +8,3 @@ Una vez que el ransomware infecta un dispositivo, cifra los archivos más import
 | ------------------------------------------------------------------------- | ---------------------------------------------------- |
 | [r0001](https://github.com/german-rs/malbicho/tree/main/ransomware/r0001) | Se implementa cifrado en un archivo .txt             |
 | [r0002](https://github.com/german-rs/malbicho/tree/main/ransomware/r0002) | Se implementa comprension y cifrado en un directorio |
-
-## Métodos de Cifrado en Ransomware
-
-Un ransomware generalmente utiliza cifrado fuerte para secuestrar archivos y exigir un rescate. Los métodos más comunes incluyen:
-
-### 🔐 1. Cifrado Asimétrico (RSA)
-
-- Utiliza una clave pública para cifrar archivos y una clave privada (oculta en el servidor del atacante) para descifrarlos.
-- **Ejemplo:** RSA-2048 o RSA-4096.
-- Usado en ransomware avanzado como **WannaCry** y **Locky**.
-
-### 🔥 2. Cifrado Simétrico (AES)
-
-- Usa una única clave secreta para cifrar y descifrar archivos.
-- **Ejemplo:** AES-256, muy rápido y seguro.
-- La clave suele estar encriptada con RSA y enviada al servidor del atacante.
-
-### 🚀 3. Cifrado Híbrido (RSA + AES)
-
-- AES cifra los archivos (porque es rápido).
-- RSA cifra la clave AES (para evitar que la víctima la descubra).
-- Usado en ransomware como **TeslaCrypt** y **CryptoLocker**.
