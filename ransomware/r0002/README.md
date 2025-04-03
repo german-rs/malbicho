@@ -14,7 +14,7 @@ Este script en **Zsh** comprime un directorio en un archivo **TAR** y lo cifra u
 
 ### Advertencia
 
-> Este proceso elimina permanentemente el directorio original después del cifrado.  
-> Si la clave de cifrado se pierde, el archivo **NO** podrá ser recuperado.
+- Este proceso elimina permanentemente el directorio original después del cifrado.
+- Si la clave de cifrado se pierde, el archivo **NO** podrá ser recuperado.
 
 **Diseñado únicamente con fines educativos y para entornos controlados.**
