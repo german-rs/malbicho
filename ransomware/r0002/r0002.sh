@@ -1,6 +1,6 @@
 #! /bin/zsh
 
-# -----------------------------------------------------------------------------
+# 
 # Script de compresión y cifrado de directorios con OpenSSL
 #
 # Descripción:
@@ -20,7 +20,11 @@
 # Advertencia:
 #   - Este proceso elimina el directorio original tras el cifrado. 
 #   - Asegúrese de recordar la clave, ya que sin ella no podrá descifrar el archivo.
-# -----------------------------------------------------------------------------
+#
+#
+# Autor: Germán Riveros S.
+# Fecha: 01/04/2025
+# 
 
 DIRECTORIO="carpeta"
 ARCHIVO_CIFRADO="carpeta.tar.enc"

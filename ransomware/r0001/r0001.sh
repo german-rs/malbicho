@@ -1,26 +1,29 @@
 #! /bin/zsh
 
-# -----------------------------------------------------------------------------
-# Script de encriptación con OpenSSL
+
+# @file r0001.sh
+# @brief Script de encriptación con OpenSSL
+#
+# @details Este script en Zsh encripta un archivo de texto utilizando el algoritmo 
+# AES-256-CBC a través de OpenSSL. Implementa medidas de seguridad como salting
+# y PBKDF2 con 100,000 iteraciones para fortalecer la clave derivada.
+#
+# @section usage Uso
+# - Asegurarse de que el archivo "documento.txt" esté en el mismo directorio.
+# - Ejecutar el script en un entorno compatible con Zsh.
+#
+# @section params Parámetros
+# - archivo: Nombre del archivo de entrada a encriptar.
+# - archivo_encriptado: Nombre del archivo de salida con el contenido cifrado.
+# - clave_secreta: Clave utilizada para la encriptación (definida en el script).
 # 
-# Descripción:
-#   Este script en Zsh encripta un archivo de texto utilizando el algoritmo 
-#   AES-256-CBC a través de OpenSSL. Implementa medidas de seguridad como salting
-#   y PBKDF2 con 100,000 iteraciones para fortalecer la clave derivada.
-#
-# Uso:
-#   - Asegurarse de que el archivo "documento.txt" esté en el mismo directorio.
-#   - Ejecutar el script en un entorno compatible con Zsh.
-#
-# Parámetros:
-#   - archivo: Nombre del archivo de entrada a encriptar.
-#   - archivo_encriptado: Nombre del archivo de salida con el contenido cifrado.
-#   - clave_secreta: Clave utilizada para la encriptación (definida en el script).
-#
-# Advertencia:
-#   - El uso inadecuado de la clave de encriptación puede llevar a la pérdida 
-#     irreversible del acceso a los datos.
-# -----------------------------------------------------------------------------
+# @warning El uso inadecuado de la clave de encriptación puede llevar a la pérdida 
+# irreversible del acceso a los datos.
+#   
+# @author Germán Riveros S.
+# @date 01/04/2025
+# @version 1.0
+# 
 
 # Archivo de entrada.
 archivo="documento.txt"

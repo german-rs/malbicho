@@ -1,17 +1,19 @@
 /**
- * @file file_encryption.c
+ * @file r0001.c
  * @brief Implementación de encriptación de archivos usando AES-256-CBC
  *
  * Este programa proporciona funcionalidad para encriptar archivos utilizando
  * el algoritmo AES-256 en modo CBC con derivación de claves mediante PBKDF2.
  * Utiliza la biblioteca OpenSSL para las operaciones criptográficas.
  *
+ * Compilación: clang -o r0001 r0001.c -lssl -lcrypto
+ * Ejecución: ./r0001
+ *
+ *
  * @author Germán Riveros S.
  * @date 02/04/2025
  * @version 1.0
  *
- * Compilación: clang -o r0001 r0001.c -lssl -lcrypto
- * Ejecución: ./r0001
  */
 
 #include <stdio.h>
