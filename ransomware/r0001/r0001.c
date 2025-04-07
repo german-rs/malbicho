@@ -24,7 +24,7 @@
 #include <openssl/err.h>
 #include <unistd.h>
 
-#define KEY_LENGTH 32    // AES-256 utiliza una clave de 256 bits (32 bytes)
+#define KEY_LENGTH 32    // AES-256 utiliza una clave de 32 bytes
 #define IV_LENGTH 16     // AES utiliza un IV de 16 bytes en modo CBC
 #define SALT_LENGTH 8    // Tamaño estándar para el salt PKCS5_PBKDF2
 #define ITERATIONS 10000 // Número de iteraciones para PBKDF2
