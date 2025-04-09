@@ -117,3 +117,82 @@ int encrypt_file(const char *input_file, const char *output_file, const char *ke
 }
 
 // Callback para cada archivo
+
+int process_file(const char *path, const struct stat *sb, int typeflag, struct FTW *ftwbuf)
+{
+    if (typeflag == FTW_F)
+    {
+        // Ruta relativa desde el punto base
+        char relative_path[PATH_MAX];
+        snprintf(relative_path, sizeof(relative_path), "%s", path + ftwbuf->base);
+
+        // Ruta de salida: output/<ruta_relativa>.enc
+        char output_path[PATH_MAX];
+        snprintf(output_path, sizeof(output_path), "%s/%s.enc", output_base, relative_path);
+
+        // Crear directorios necesarios
+        char dir_copy[PATH_MAX];
+        strcpy(dir_copy, output_path);
+        char *dir = dirname(dir_copy);
+        char mkdir_cmd[PATH_MAX + 10];
+        snprintf(mkdir_cmd, sizeof(mkdir_cmd), "mkdir -p \"%s\"", dir);
+        system(mkdir_cmd);
+
+        printf("Cifrando: %s -> %s\n", path, output_path);
+        if (encrypt_file(path, output_path, clave_secreta) != 0)
+        {
+            fprintf(stderr, "Error al cifrar %s\n", path);
+        }
+    }
+
+    return 0;
+}
+
+// Main
+
+int main(int argc, char *argv[])
+{
+    if (argc != 2)
+    {
+        fprintf(stderr, "Uso: %s <archivo_o_directorio>\n", argv[0]);
+        return 1;
+    }
+
+    // Crear carpeta de salida si no existe
+    mkdir(output_base, 0755);
+
+    struct stat path_stat;
+    if (stat(argv[1], &path_stat) != 0)
+    {
+        perror("Error al acceder a la ruta");
+        return 1;
+    }
+
+    if (S_ISDIR(path_stat.st_mode))
+    {
+        printf("Recorriendo directorio: %s\n", argv[1]);
+        if (nftw(argv[1], process_file, 20, FTW_PHYS) == -1)
+        {
+            perror("nftw");
+            return 1;
+        }
+    }
+    else if (S_ISREG(path_stat.st_mode))
+    {
+        // Cifrar un solo archivo
+        char output_path[PATH_MAX];
+        snprintf(output_path, sizeof(output_path), "%s/%s.enc", output_base, basename(argv[1]));
+        if (encrypt_file(argv[1], output_path, clave_secreta) != 0)
+        {
+            fprintf(stderr, "Error al cifrar el archivo\n");
+            return 1;
+        }
+        printf("Archivo cifrado: %s\n", output_path);
+    }
+    else
+    {
+        fprintf(stderr, "La ruta no es válida\n");
+        return 1;
+    }
+    return 0;
+}
