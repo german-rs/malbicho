@@ -1,3 +1,16 @@
+#ifndef KEY_GENERATOR_HPP
+#define KEY_GENERATOR_HPP
+
+#include <string>
+#include <vector>
+#include <memory>
+#include <mutex>
+#include <future>
+#include <functional>
+
+#include "../core/Constants.hpp"
+#include "RSAEncryptor.hpp"
+
 class KeyGenerator
 {
 private:
@@ -35,3 +48,5 @@ public:
     // Recupera la clave cifrada para un archivo
     std::string retrieveKeyForFile(const std::string &filePath);
 };
+
+#endif // KEY_GENERATOR_HPP
