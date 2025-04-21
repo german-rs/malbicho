@@ -19,7 +19,7 @@
  *     - La ejecución de código malicioso sin consentimiento es ilegal y antiético.
  *
  * Compilación: gcc -o vc0002 vc0002.c
- * Ejecución: ./vc0001
+ * Ejecución: ./vc0002
  *
  * @author Germán Riveros S.
  * @date 17/04/2025

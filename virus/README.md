@@ -6,7 +6,7 @@ Los daños que un virus puede causar varían ampliamente. En su nivel más bási
 
 Este tipo de amenaza informática es una de las más antiguas y persistentes en el ámbito de la ciberseguridad, lo que subraya la importancia de contar con medidas de protección, como software antivirus actualizado y buenas prácticas en el manejo de archivos y descargas.
 
-| Experimento                                                          | Descripción                                                                                                                                                  |
-| -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [v0001](https://github.com/german-rs/malbicho/tree/main/virus/v0001) | Se implementa y analiza la propiedad de autorreplicación en un contenedor Docker aislado.                                                                    |
-| [v0002](https://github.com/german-rs/malbicho/tree/main/virus/v0002) | Se implementa y analiza la propiedad de autorreplicación, junto con técnicas de sigilo (stealth) y persistencia, dentro de un contenedor Docker. En proceso. |
+| Experimento                                                          | Descripción                                                                                                                                      |
+| -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [v0001](https://github.com/german-rs/malbicho/tree/main/virus/v0001) | Se implementa y analiza la propiedad de autorreplicación en un contenedor Docker aislado.                                                        |
+| [v0002](https://github.com/german-rs/malbicho/tree/main/virus/v0002) | Se implementa y analiza la propiedad de autorreplicación, junto con técnicas de sigilo (stealth) y persistencia, dentro de un contenedor Docker. |
