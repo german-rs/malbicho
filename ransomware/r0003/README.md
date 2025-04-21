@@ -1,6 +1,79 @@
 # Estudio y análisis del Ransomware WannaCry
 
-## Estructura de directorios y archivos
+## **⚠️ WannaCry Replica Project (Educational Purposes Only)**
+
+**A modular, research-focused implementation of the WannaCry ransomware architecture for academic analysis.**
+
+### **🔍 Project Overview**
+
+This repository contains a **simulated, non-functional replica** of the WannaCry ransomware, designed to:
+
+- Study malware behavior in a controlled environment.
+- Understand ransomware propagation techniques (e.g., SMB exploits, encryption methods).
+- Demonstrate defensive strategies (kill switches, decryption workflows).
+
+🚫 **This is NOT a real malware tool.** It lacks destructive capabilities (no actual file encryption, network attacks, or persistence mechanisms).
+
+---
+
+### **⚠️ Legal & Ethical Warnings**
+
+#### **🚨 Disclaimer**
+
+- This project is **strictly for educational, research, and cybersecurity training purposes**.
+- **Replicating or modifying this code for malicious purposes is illegal.**
+- The authors **do not endorse or support malware development** outside ethical hacking environments.
+
+#### **🔐 Usage Restrictions**
+
+- **Run only in isolated lab environments** (e.g., VirtualBox, VMware, Docker).
+- **Do not deploy on real systems, networks, or devices.**
+- Compliance with local laws (e.g., **Computer Fraud and Abuse Act (CFAA)** in the U.S., **GDPR** in the EU) is mandatory.
+
+---
+
+### **🛡️ Ethical Guidelines**
+
+If using this project for research:
+
+1. **Obtain explicit permission** before testing on any network.
+2. **Document intent** (e.g., academic paper, malware analysis course).
+3. **Report vulnerabilities responsibly** if discovered during testing.
+
+---
+
+### **📚 Educational Resources**
+
+For further learning:
+
+- [MITRE ATT&CK: Ransomware Tactics](https://attack.mitre.org/software/S0366/)
+- [CISA WannaCry Analysis](https://www.cisa.gov/news-events/cybersecurity-advisories/aa17-134a)
+- [Ethical Hacking Best Practices](https://www.eccouncil.org/ethical-hacking/)
+
+---
+
+### **📝 License**
+
+This repository is licensed under **MIT License** (see [LICENSE](LICENSE)), which explicitly **prohibits misuse**. Violators assume all legal responsibility.
+
+---
+
+#### **🛑 By using this project, you agree to these terms.**
+
+**Report misuse to:** [your-email@example.com] | [Your Institution/Lab Name]
+
+---
+
+Este texto:
+
+1. **Clarifica el propósito educativo** desde el principio.
+2. **Incluye advertencias legales** destacadas.
+3. **Proporciona recursos** para aprendizaje ético.
+4. **Desalienta el uso malicioso** con lenguaje firme pero profesional.
+
+¿Quieres ajustar algún detalle (ej: añadir una política de reporte de bugs o créditos institucionales)?
+
+### Estructura de directorios y archivos
 
 ```
 wannacry/
