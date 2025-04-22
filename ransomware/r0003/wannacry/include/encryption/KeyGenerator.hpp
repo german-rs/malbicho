@@ -1,52 +1,28 @@
+// KeyGenerator.hpp (Actualizado según relaciones del UML)
 #ifndef KEY_GENERATOR_HPP
 #define KEY_GENERATOR_HPP
 
 #include <string>
 #include <vector>
-#include <memory>
-#include <mutex>
-#include <future>
-#include <functional>
-
 #include "../core/Constants.hpp"
-#include "RSAEncryptor.hpp"
 
 class KeyGenerator
 {
-private:
-    // Generador de números aleatorios criptográficamente seguros
-    std::unique_ptr<RandomNumberGenerator> rng;
-
-    // Referencia al encriptador RSA para cifrar las claves AES
-    std::shared_ptr<RSAEncryptor> rsaEncryptor;
-
-    // Caché de claves (para uso interno)
-    std::map<std::string, std::string> keyCache;
-
-    // Método para generar entropía segura
-    std::vector<unsigned char> generateSecureEntropy(size_t bytes);
-
 public:
-    // Constructor que recibe un encriptador RSA inicializado
-    KeyGenerator(std::shared_ptr<RSAEncryptor> rsaEncryptor);
+    // Métodos necesarios para soportar FileEncryptor del UML
+    static std::string generateRandomKey(int keySize = Constants::Encryption::RSA_KEY_SIZE);
 
-    // Genera una nueva clave AES aleatoria
-    std::vector<unsigned char> generateAESKey(int keySize = 256);
+    // Métodos para generación de claves específicas
+    static std::vector<unsigned char> generateSecureIV();
+    static std::string generateFileSpecificKey(const std::string &baseKey,
+                                               const std::string &filePath);
 
-    // Cifra una clave AES con RSA
-    std::string encryptKey(const std::vector<unsigned char> &aesKey);
+    // Métodos para integración con RSA
+    static std::pair<std::string, std::string> generateRSAKeyPair(int keySize);
 
-    // Descifra una clave AES (requiere clave privada RSA)
-    std::vector<unsigned char> decryptKey(const std::string &encryptedKey);
-
-    // Genera y cifra una clave en una sola operación
-    std::string generateAndEncryptKey(int keySize = 256);
-
-    // Almacena información de clave para un archivo específico
-    bool storeKeyForFile(const std::string &filePath, const std::string &encryptedKey);
-
-    // Recupera la clave cifrada para un archivo
-    std::string retrieveKeyForFile(const std::string &filePath);
+    // Métodos para validación de claves
+    static bool validateAESKey(const std::vector<unsigned char> &key);
+    static bool validateRSAKey(const std::string &key);
 };
 
 #endif // KEY_GENERATOR_HPP
