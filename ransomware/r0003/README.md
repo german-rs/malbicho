@@ -58,21 +58,6 @@ This repository is licensed under **MIT License** (see [LICENSE](LICENSE)), whic
 
 ---
 
-#### **🛑 By using this project, you agree to these terms.**
-
-**Report misuse to:** [your-email@example.com] | [Your Institution/Lab Name]
-
----
-
-Este texto:
-
-1. **Clarifica el propósito educativo** desde el principio.
-2. **Incluye advertencias legales** destacadas.
-3. **Proporciona recursos** para aprendizaje ético.
-4. **Desalienta el uso malicioso** con lenguaje firme pero profesional.
-
-¿Quieres ajustar algún detalle (ej: añadir una política de reporte de bugs o créditos institucionales)?
-
 ### Estructura de directorios y archivos
 
 ```
